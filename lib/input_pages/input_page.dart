@@ -52,6 +52,14 @@ class _InputPageState extends State<InputPage> {
                     color: Colors.lightGreen,
                     borderRadius: BorderRadius.circular(8),
                   ),
+                  child: Column(
+                    children: const [
+                      Icon(Icons.female,size: 24,),
+                      Text("FEMALE",style: TextStyle(
+                        fontSize: 24,
+                      ),)
+                    ],
+                  ),
 
                 ),
               ),
