@@ -15,6 +15,7 @@ class _InputPageState extends State<InputPage> {
       inactiveColor; // color change korar jonno aigola use korte hoi //
   Color femaleColor = inactiveColor;
   Gender? selectedGender;
+  double height = 120.0;
 
   //1 = male
   //2 = female
@@ -87,11 +88,41 @@ class _InputPageState extends State<InputPage> {
             ],
           ),
           ResuableCard(
-            onPressed: () {
-              print("kasem");
-            },
             cardChild: Column(
-              children: [],
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text("HEIGHT", style: mediumTextStyle),
+                ),
+                // SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  textBaseline: TextBaseline.alphabetic,
+                  // alphabetic line ar sathe milanor jonno ai ta use kora hoi
+
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  children: [
+                    Text(
+                      "${height.toInt()}",
+                      style: largeTextStyle,
+                    ),
+                    Text(
+                      "cm",
+                      style: mediumTextStyle,
+                    ),
+                  ],
+                ),
+                Slider(
+                    value: height,
+                    max: 200.0,
+                    min: 120.0,
+                    onChanged: (double newValue) {
+                      setState(() {
+                        height = newValue;
+                      });
+                    })
+              ],
             ),
             color: inactiveColor,
           ),
@@ -108,9 +139,9 @@ class _InputPageState extends State<InputPage> {
                   "AGE",
                   style: TextStyle(fontSize: 20),
                 ),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
