@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget { //extends holo
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: InputPage(),
+      home:  InputPage(),
     );
   }
 }
+// 1 gonta 25 minit
