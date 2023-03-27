@@ -117,6 +117,8 @@ class _InputPageState extends State<InputPage> {
                     value: height,
                     max: 200.0,
                     min: 120.0,
+                    activeColor: Colors.lightGreenAccent,
+                    inactiveColor: Colors.white24,
                     onChanged: (double newValue) {
                       setState(() {
                         height = newValue;
