@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/constants/constants.dart';
 import 'package:bmi_calculator/widgets/card_gender.dart';
 import 'package:bmi_calculator/widgets/reusablecard.dart';
+import 'package:bmi_calculator/widgets/round_icon_button.dart';
 import 'package:flutter/material.dart';
 
 class InputPage extends StatefulWidget {
@@ -16,6 +17,8 @@ class _InputPageState extends State<InputPage> {
   Color femaleColor = inactiveColor;
   Gender? selectedGender;
   double height = 120.0;
+  int weight =35;
+  int age =15;
 
   //1 = male
   //2 = female
@@ -129,19 +132,112 @@ class _InputPageState extends State<InputPage> {
             color: inactiveColor,
           ),
           Row(
-            children: const [
+            children: [
               ResuableCard(
-                cardChild: Text(
-                  "WEIGHT",
-                  style: TextStyle(fontSize: 20),
+                color: inactiveColor,
+                cardChild: Column(
+                  children: [
+                    Text(
+                      "WEIGHT",
+                      style: mediumTextStyle,
+                    ),
+                    Row(
+                      children: [
+                        ResuableCard(
+                          cardChild: Center(
+                            child: Text(
+                              "$weight",
+                              style: largeTextStyle,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Round_Icons_button(
+                          onPressed: () {
+                            setState(() {
+                              weight++;
+
+                            });
+                          },
+                          icon: Icons.add,
+                        ),
+                        SizedBox(
+                          width: 16,
+                        ),
+                        Round_Icons_button(
+                          onPressed: () {
+                            setState(() {
+                              weight--;
+                            });
+                          },
+                          icon: Icons.minimize_rounded,
+                        )
+                      ],
+                    ),
+                  ],
                 ),
               ),
               ResuableCard(
-                cardChild: Text(
-                  "AGE",
-                  style: TextStyle(fontSize: 20),
+                color: inactiveColor,
+                cardChild: Column(
+                  children: [
+                    Text(
+                      "AGE",
+                      style: mediumTextStyle,
+                    ),
+                    Row(
+                      children: [
+                        ResuableCard(
+                          cardChild: Center(
+                            child: Text(
+                              "$age",
+                              style: largeTextStyle,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Round_Icons_button(
+                          onPressed: () {
+                           setState(() {
+                             age++;
+                           });
+                          },
+                          icon: Icons.add,
+                        ),
+                        SizedBox(
+                          width: 16,
+                        ),
+                        Round_Icons_button(
+                          onPressed: () {
+                            setState(() {
+                              age--;
+                            });
+                          },
+                          icon: Icons.minimize_rounded,
+                        )
+                      ],
+                    ),
+                  ],
                 ),
               ),
+
+              // Row(
+              //   children: [
+              //     ResuableCard(
+              //       cardChild: Text("80",
+              //       style: largeTextStyle,
+              //       ),
+              //     )
+              //   ],
+              // ),
             ],
           ),
         ],
