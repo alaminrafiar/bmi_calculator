@@ -1,5 +1,6 @@
 import 'package:bmi_calculator/constants/constants.dart';
 import 'package:bmi_calculator/widgets/card_gender.dart';
+import 'package:bmi_calculator/widgets/custom_button.dart';
 import 'package:bmi_calculator/widgets/reusablecard.dart';
 import 'package:bmi_calculator/widgets/round_icon_button.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +18,8 @@ class _InputPageState extends State<InputPage> {
   Color femaleColor = inactiveColor;
   Gender? selectedGender;
   double height = 120.0;
-  int weight =35;
-  int age =15;
+  int weight = 35;
+  int age = 15;
 
   //1 = male
   //2 = female
@@ -160,7 +161,6 @@ class _InputPageState extends State<InputPage> {
                           onPressed: () {
                             setState(() {
                               weight++;
-
                             });
                           },
                           icon: Icons.add,
@@ -206,9 +206,9 @@ class _InputPageState extends State<InputPage> {
                       children: [
                         Round_Icons_button(
                           onPressed: () {
-                           setState(() {
-                             age++;
-                           });
+                            setState(() {
+                              age++;
+                            });
                           },
                           icon: Icons.add,
                         ),
@@ -238,8 +238,15 @@ class _InputPageState extends State<InputPage> {
               //     )
               //   ],
               // ),
+
             ],
           ),
+          custom_button(
+            onPressed: (){
+              print("kasem");
+            },
+            title: "CALCULATOR",
+          )
         ],
       ),
     );
