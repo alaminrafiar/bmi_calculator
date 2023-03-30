@@ -157,13 +157,16 @@ class _InputPageState extends State<InputPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Round_Icons_button(
-                          onPressed: () {
-                            setState(() {
-                              weight++;
-                            });
-                          },
-                          icon: Icons.add,
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Round_Icons_button(
+                            onPressed: () {
+                              setState(() {
+                                weight++;
+                              });
+                            },
+                            icon: Icons.add,
+                          ),
                         ),
                         SizedBox(
                           width: 16,
@@ -204,13 +207,16 @@ class _InputPageState extends State<InputPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Round_Icons_button(
-                          onPressed: () {
-                            setState(() {
-                              age++;
-                            });
-                          },
-                          icon: Icons.add,
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Round_Icons_button(
+                            onPressed: () {
+                              setState(() {
+                                age++;
+                              });
+                            },
+                            icon: Icons.add,
+                          ),
                         ),
                         SizedBox(
                           width: 16,
